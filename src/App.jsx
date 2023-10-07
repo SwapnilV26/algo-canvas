@@ -1,12 +1,22 @@
-function App() {
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Hero from "./pages/Hero";
+import Visualize from "./pages/Visualize";
 
+function App() {
   return (
     <>
-      <h1 className='font-bold text-center text-red-500'>
-        Hello World
-      </h1>
+      <BrowserRouter>
+        <Routes>
+          <Route
+            exact
+            path="/"
+            element={ <Hero /> }
+          />
+          <Route Exact path="/visualize" element={<Visualize />} />
+        </Routes>
+      </BrowserRouter>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
