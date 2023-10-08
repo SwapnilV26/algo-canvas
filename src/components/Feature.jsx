@@ -95,8 +95,9 @@ const Feature = () => {
             Features Showcase
           </h2>
           <p className="text-xl text-gray-700 tracking-tighter">
+            <i>
             "Explore the Engine that Drives DSA Mastery: Our Exceptional
-            Features, Your Path to Expertise."
+            Features, Your Path to Expertise."</i>
           </p>
         </div>
 
