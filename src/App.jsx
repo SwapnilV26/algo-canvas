@@ -1,6 +1,7 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Hero from "./pages/Hero";
 import Visualize from "./pages/Visualize";
+import Sort from "./components/sortingComponents/sort";
 
 function App() {
   return (
@@ -12,7 +13,8 @@ function App() {
             path="/"
             element={ <Hero /> }
           />
-          <Route Exact path="/visualize" element={<Visualize />} />
+          <Route path="/visualize" element={<Visualize />} />
+          <Route path="/visualize/sort" element={<Sort />} />
         </Routes>
       </BrowserRouter>
     </>
