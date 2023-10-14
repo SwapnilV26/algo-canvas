@@ -5,6 +5,7 @@ import {
   selectionSort,
   insertionSort,
 } from "../../algorithms/sortingAlgorithms";
+import {quickSort} from "../../algorithms/quickSort";
 import Menu from "./menu";
 // import Header from "../Header";
 
@@ -81,6 +82,9 @@ function Sort() {
         break;
       case 2:
         steps1 = insertionSort(state.rects);
+        break;
+      case 3:
+        steps1 = quickSort(state.rects);
         break;
       default:
         steps1 = bubbleSort(state.rects);

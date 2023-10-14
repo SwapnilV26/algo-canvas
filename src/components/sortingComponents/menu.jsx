@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import DiscreteSlider from "./slider";
 import SimpleSelect from "./simpleSelect";
-import RangeSlider from "./doubleSlider";
 import SwitchLabels from "./formControlLabel";
 
 

@@ -1,0 +1,52 @@
+.Big_container {
+  padding: 2rem 3rem;
+}
+@media screen and (max-width: 500px) {
+  .Big_container {
+    padding: 1rem 1rem;
+  }
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  min-height: 90vh;
+}
+
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+  padding-top: 1rem;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+.Trees {
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+}
+.row {
+  display: flex;
+  flex-direction: row;
+  gap: 2.5rem;
+  width: 100%;
+  justify-content: space-around;
+  align-items: center;
+}
+
+@media screen and (max-width: 650px) {
+  .heading {
+    font-size: 2rem;
+  }
+  .row {
+    gap: 0.5rem;
+  }
+  .Trees {
+    gap: 1.5rem;
+  }
+}
