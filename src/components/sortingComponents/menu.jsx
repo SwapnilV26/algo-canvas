@@ -1,7 +1,7 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import DiscreteSlider from "./slider";
 import SimpleSelect from "./simpleSelect";
-import SwitchLabels from "./formControlLabel";
+// import SwitchLabels from "./formControlLabel";
 
 
 class Menu extends Component {
@@ -43,14 +43,15 @@ class Menu extends Component {
                     pos={0}
                     onAlgoChanged={this.props.onAlgoChanged}
                 />
-                <SwitchLabels
+                {/* <SwitchLabels
                     disable={this.props.disable}
                     onDoubleChange={this.props.onDoubleChange}
-                />
-                <SimpleSelect
+                /> */}
+                {/* <SimpleSelect
                     pos={1}
                     onAlgoChanged={this.props.onAlgoChanged}
-                />
+                /> */}
+
                 <button
                     className='text-white bg-purple-700 hover:bg-purple-800 font-medium rounded-lg text-sm px-5 py-2.5 mb-2'
                     onClick={this.props.onViusalize}
@@ -63,10 +64,10 @@ class Menu extends Component {
             </div>
         );
     }
-    isClickable = () =>{
-        if( this.props.disable ){
-            return {cursor: "not-allowed"};
-        } else{
+    isClickable = () => {
+        if (this.props.disable) {
+            return { cursor: "not-allowed" };
+        } else {
             return {};
         }
     }

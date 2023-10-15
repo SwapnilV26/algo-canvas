@@ -1,0 +1,15 @@
+.nav {
+    display: flex;
+    justify-content: flex-start;
+    background-color: #BBBBBB;
+}
+
+nav>div {
+    margin: auto 20px;
+}
+
+.nav>button {
+    margin: auto 20px;
+    width: auto;
+    height: fit-content;
+}
