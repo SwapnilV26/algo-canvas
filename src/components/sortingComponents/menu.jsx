@@ -3,7 +3,7 @@ import DiscreteSlider from "./slider";
 import SimpleSelect from "./simpleSelect";
 import SwitchLabels from "./formControlLabel";
 import { Link } from "react-router-dom";
-import { MdArrowBackIos } from 'react-icons/md';
+import { MdArrowBackIos } from "react-icons/md";
 
 class Menu extends Component {
   render() {
@@ -15,6 +15,7 @@ class Menu extends Component {
         >
           <MdArrowBackIos size={20} />
         </Link>
+
         <button
           className="transition duration-150 ease-in-out py-2 px-5 mr-2 text font-medium text-gray-900 bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700"
           onClick={this.props.onRandomize}
@@ -43,12 +44,22 @@ class Menu extends Component {
           disable={false}
         />
         <div className="flex">
-          <SimpleSelect pos={0} onAlgoChanged={this.props.onAlgoChanged} onRandomize={this.props.onRandomize} />
+          <SimpleSelect
+            pos={0}
+            onAlgoChanged={this.props.onAlgoChanged}
+            onRandomize={this.props.onRandomize}
+            disable={this.props.disable}
+          />
           <SwitchLabels
             disable={this.props.disable}
             onDoubleChange={this.props.onDoubleChange}
           />
-          <SimpleSelect pos={1} onAlgoChanged={this.props.onAlgoChanged} onRandomize={this.props.onRandomize} />
+          <SimpleSelect
+            pos={1}
+            onAlgoChanged={this.props.onAlgoChanged}
+            onRandomize={this.props.onRandomize}
+            disable={this.props.disable}
+          />
         </div>
         <button
           className="text-white bg-purple-700 hover:bg-purple-800 font-medium rounded-lg text px-5 py-2 transition duration-150 ease-in-out"
@@ -61,6 +72,7 @@ class Menu extends Component {
       </div>
     );
   }
+
   isClickable = () => {
     if (this.props.disable) {
       return { cursor: "not-allowed" };

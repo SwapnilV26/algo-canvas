@@ -11,7 +11,7 @@ const Header = () => {
             <li>
               <Link
                 to="/"
-                className="font-medium hover:text-blue-500 text-gray-600 flex items-center transition duration-150 ease-in-out"
+                className="font-medium hover:text-blue-500 text-gray-700 flex items-center transition duration-150 ease-in-out"
               >
                 Home
               </Link>
@@ -20,7 +20,7 @@ const Header = () => {
             <li>
               <Link
                 to="/visualize"
-                className="font-medium hover:text-blue-500 text-gray-600 flex items-center transition duration-150 ease-in-out"
+                className="font-medium hover:text-blue-500 text-gray-700 flex items-center transition duration-150 ease-in-out"
               >
                 Visualize
               </Link>
@@ -29,7 +29,7 @@ const Header = () => {
             <li>
               <a
                 href="#feature"
-                className="font-medium hover:text-blue-500 text-gray-600 flex items-center transition duration-150 ease-in-out"
+                className="font-medium hover:text-blue-500 text-gray-700 flex items-center transition duration-150 ease-in-out"
               >
                 Features
               </a>

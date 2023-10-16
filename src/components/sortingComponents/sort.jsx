@@ -7,6 +7,8 @@ import {
 } from "../../algorithms/sortingAlgorithms";
 import { quickSort } from "../../algorithms/quickSort";
 import Menu from "./menu";
+import AlgoInfo from "../AlgoInfo";
+import { Box } from "@mui/material";
 
 class Sort extends Component {
   state = {
@@ -20,6 +22,8 @@ class Sort extends Component {
     isRunning2: false,
     algo1: 0,
     algo2: 0,
+    open: false,
+    open2: false,
   };
 
   componentDidMount() {
@@ -43,36 +47,89 @@ class Sort extends Component {
             onSpeedChange={this.handleSpeedChanged}
           />
         </div>
-        <div className="flex flex-col items-center justify-center gap-5 mt-5">
+        <div className="flex flex-col items-center justify-center gap-5">
           <Rects speed={this.state.speed} rects={this.state.rects} />
+          <div className="flex gap-5">
+            <p className="font-semibold text-lg">
+              Bubble Sort, <em className="font-normal">Time Complexity:</em>{" "}
+              O(n^2)
+            </p>
+            <button
+              onClick={this.handleClickOpen}
+              className="underline text-blue-500 underline-offset-1"
+            >
+              More Info...
+            </button>
+            <Box>
+              <AlgoInfo
+                open={this.state.open}
+                handleClose={this.handleClickOpen}
+              />
+            </Box>
+          </div>
           {this.state.doubles && <hr style={{ width: "90%" }} />}
-          {this.state.doubles && <Rects rects={this.state.rects2} />}
+          {this.state.doubles && (
+            <>
+              <Rects rects={this.state.rects2} />
+              <div className="flex gap-5 mb-10">
+                <p className="font-semibold text-lg">
+                  Bubble Sort, <em className="font-normal">Time Complexity:</em>{" "}
+                  O(n^2)
+                </p>
+                <button
+                  onClick={this.handleClickOpen2}
+                  className="underline text-blue-500 underline-offset-1"
+                >
+                  More Info...
+                </button>
+                <Box>
+                  <AlgoInfo
+                    open={this.state.open2}
+                    handleClose={this.handleClickOpen2}
+                    title={"box2"}
+                  />
+                </Box>
+              </div>
+            </>
+          )}
         </div>
       </React.Fragment>
     );
   }
+
+  handleClickOpen = () => {
+    this.setState({ open: !this.state.open });
+  };
+
+  handleClickOpen2 = () => {
+    this.setState({ open2: !this.state.open2 });
+  };
+
   handleRandomize = () => {
     const rect = getInitialRects(this.state.count);
     const rect2 = rect.slice();
     this.setState({ rects: rect, rects2: rect2 });
   };
-  handleRefresh = () => {
-    const rects = this.state.rects;
-    for (let i = 0; i < rects.length; i++) {
-      const rect = { ...rects[i], isSorted: false, isSorting: false };
-      rects[i] = rect;
-    }
-    const rects2 = rects.slice();
-    this.setState({ rects, rects2 });
-  };
+
+  // handleRefresh = () => {
+  //   const rects = this.state.rects;
+  //   for (let i = 0; i < rects.length; i++) {
+  //     const rect = { ...rects[i], isSorted: false, isSorting: false };
+  //     rects[i] = rect;
+  //   }
+  //   const rects2 = rects.slice();
+  //   this.setState({ rects, rects2 });
+  // };
 
   handleDouble = (val) => {
     this.setState({ doubles: val });
   };
+
   handleCountChange = (val) => {
     this.setState({ count: val });
     this.handleRandomize();
   };
+
   handleAlgoChanged = (pos, val) => {
     if (pos === 0) {
       this.setState({ algo1: val });
@@ -129,7 +186,6 @@ class Sort extends Component {
     if (this.state.doubles) this.handleSecond(steps2);
   };
   handleFirst = async (steps) => {
-    // console.log("fsdfsdfsdfasdf");
     this.setState({ isRunning1: true });
 
     // const steps = bubbleSort(this.state.rects);

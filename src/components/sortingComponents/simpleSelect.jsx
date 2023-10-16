@@ -18,7 +18,7 @@ const SimpleSelect = (props) => {
 
     return (
         <div className="ml-2 mr-2">
-            <FormControl variant="standard">
+            <FormControl variant="standard" disabled={props.disable}>
                 <InputLabel id="demo-simple-select-label">Algorithm</InputLabel>
                 <Select
                     labelId="demo-simple-select-label"
