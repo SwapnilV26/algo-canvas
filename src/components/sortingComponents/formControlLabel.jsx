@@ -1,5 +1,4 @@
 import React from "react";
-// import {FormGroup} from '@material-ui/core/FormGroup';
 import { FormControlLabel, FormGroup } from "@mui/material";
 import Switch from "@mui/material/Switch";
 
@@ -22,6 +21,7 @@ export default function SwitchLabels(props) {
             color="secondary"
             onChange={handleChange}
             name="checkedA"
+            className="ml-4"
           />
         }
         label="Duo"

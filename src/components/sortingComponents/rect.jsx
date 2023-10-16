@@ -1,30 +1,32 @@
-import React, { forwardRef } from 'react';
+import React, {Component} from 'react';
 import './style.css';
+class Rect extends Component {
 
-const Rect = ({ rect, marg, w }, ref) => {
-  const checkColor = () => {
-    if (rect.isSorted) {
-      return "green";
-    } else if (rect.isSorting) {
-      return "red";
-    } else {
-      return "black";
+    render() {
+        return (
+            <div
+                className='rect'
+                style={{height:this.props.rect.width,
+                    background:this.checkColor(),
+                    margin:this.props.marg,
+                    // float:'left',
+                    verticalAlign: 'middle',
+                    width: this.props.wid
+                }}
+            >
+                
+            </div>
+        );
     }
-  };
+    checkColor = () => {
+        if( this.props.rect.isSorted ){
+            return "green";
+        } else if( this.props.rect.isSorting ){
+            return "red";
+        } else{
+            return "black"
+        }
+    }
+}
 
-  return (
-    <div
-      className='rect'
-      style={{
-        height: rect.width,
-        width: w,
-        background: checkColor(),
-        margin: marg,
-        verticalAlign: 'middle',
-      }}
-      ref={ref}
-    ></div>
-  );
-};
-
-export default forwardRef(Rect);
+export default Rect;

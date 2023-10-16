@@ -1,11 +1,9 @@
 import React from 'react';
 import {Slider, Typography} from '@mui/material';
 
-
 function valuetext(value) {
     return `${value}`;
 }
-
 
 export default function DiscreteSlider(props) {
     const handleChange = (event) =>{
@@ -16,22 +14,22 @@ export default function DiscreteSlider(props) {
         props.onCountChange(num);
     }
     return (
-        <div className="mx-2 w-[200px]">
+        <div className="mx-2 w-[200px] flex flex-col">
             <Slider
                 defaultValue={props.default}
                 getAriaValueText={valuetext}
                 aria-labelledby="discrete-slider"
-                valueLabelDisplay="on"
                 onChangeCommitted={handleChange}
                 step={props.step}
                // marks={props.marks}
                 min={props.min}
                 max={props.max}
+                valueLabelDisplay="on"
                 disabled={props.disable}
             />
-            <Typography id="discrete-slider" gutterBottom>
+            <h3 className='font-medium pb-1'>
                 {props.title}
-            </Typography>
+            </h3>
         </div>
     );
 }
