@@ -56,9 +56,9 @@ class Sort extends Component {
             </p>
             <button
               onClick={this.handleClickOpen}
-              className="underline text-blue-500 underline-offset-1"
+              className="text-white px-5 py-2 rounded-md bg-blue-500 hover:bg-blue-600 transition duration-150 ease-in-out"
             >
-              More Info...
+              View more...
             </button>
             <Box>
               <AlgoInfo
@@ -78,10 +78,11 @@ class Sort extends Component {
                 </p>
                 <button
                   onClick={this.handleClickOpen2}
-                  className="underline text-blue-500 underline-offset-1"
+                  className="text-white px-5 py-2 rounded-md bg-blue-500 hover:bg-blue-600 transition duration-150 ease-in-out"
                 >
-                  More Info...
+                  View more...
                 </button>
+
                 <Box>
                   <AlgoInfo
                     open={this.state.open2}
