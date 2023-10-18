@@ -1,12 +1,17 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Dialog from "@mui/material/Dialog";
 import DialogTitle from "@mui/material/DialogTitle";
 import DialogContent from "@mui/material/DialogContent";
 import IconButton from "@mui/material/IconButton";
 import { RxCross2 } from "react-icons/rx";
 import Desc from "../assets/Capture.png";
+import Algos from "../assets/data.json";
 
-const AlgoInfo = ({ open, handleClose, title, psedocode, tc }) => {
+const AlgoInfo = ({ open, handleClose, data}) => {
+
+  if (!data ||  Algos[data.type][data.index] === undefined) {
+    return <></>;
+  }
   return (
     <div>
       <Dialog onClose={handleClose} open={open}>
@@ -14,7 +19,7 @@ const AlgoInfo = ({ open, handleClose, title, psedocode, tc }) => {
           sx={{ ml: 1, p: 2, fontWeight: "bold" }}
           id="customized-dialog-title"
         >
-          Bubble Sort {title}
+          {Algos[data.type][data.index].name}
         </DialogTitle>
         <IconButton
           aria-label="close"
@@ -31,24 +36,23 @@ const AlgoInfo = ({ open, handleClose, title, psedocode, tc }) => {
           <div>
             <h3 className="text-gray-800 font-bold text-xl">Definition:</h3>
             <p className="ml-5 text-gray-900 font-medium text-base mb-4">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati
-              sint, debitis, deserunt velit nostrum iste enim iusto modi,
-              nesciunt tenetur ad laudantium facilis unde explicabo suscipit
-              corrupti! Ad, eius magnam!
+              {
+                Algos[data.type][data.index].definition
+              }
             </p>
           </div>
           <div>
             <h3 className="text-gray-800 font-bold text-xl">PseudoCode:</h3>
-            <img src={Desc} alt="" />
+            <img src={Algos[data.type][data.index]?.code} alt="" />
           </div>
           <div>
             <h3 className="text-gray-800 font-bold text-xl">
               Time Complexity:
             </h3>
             <div className="ml-5 text-gray-900 font-medium">
-              <p>d</p>
-              <p>d</p>
-              <p>d</p>
+              {
+                Algos[data.type][data.index].timeComplexity
+              }
             </div>
           </div>
         </DialogContent>

@@ -9,6 +9,7 @@ import { quickSort } from "../../algorithms/quickSort";
 import Menu from "./menu";
 import AlgoInfo from "../AlgoInfo";
 import { Box } from "@mui/material";
+import Algos from "../../assets/data.json";
 
 class Sort extends Component {
   state = {
@@ -51,19 +52,23 @@ class Sort extends Component {
           <Rects speed={this.state.speed} rects={this.state.rects} />
           <div className="flex gap-5">
             <p className="font-semibold text-lg">
-              Bubble Sort, <em className="font-normal">Time Complexity:</em>{" "}
-              O(n^2)
+              {Algos["sorting"][this.state.algo1]?.name}, <em className="font-normal">Time Complexity:</em>{" "}
+              {Algos["sorting"][this.state.algo1]?.timeComplexity}
             </p>
             <button
               onClick={this.handleClickOpen}
               className="text-white px-5 py-2 rounded-md bg-blue-500 hover:bg-blue-600 transition duration-150 ease-in-out"
             >
-              View more...
+              View more
             </button>
             <Box>
               <AlgoInfo
                 open={this.state.open}
                 handleClose={this.handleClickOpen}
+                data={{
+                  type: "sorting",
+                  index: this.state.algo1
+                }}
               />
             </Box>
           </div>
@@ -73,21 +78,24 @@ class Sort extends Component {
               <Rects rects={this.state.rects2} />
               <div className="flex gap-5 mb-10">
                 <p className="font-semibold text-lg">
-                  Bubble Sort, <em className="font-normal">Time Complexity:</em>{" "}
-                  O(n^2)
+                  {Algos["sorting"][this.state.algo2]?.name}, <em className="font-normal">Time Complexity:</em>{" "}
+                  {Algos["sorting"][this.state.algo2]?.timeComplexity}
                 </p>
                 <button
                   onClick={this.handleClickOpen2}
                   className="text-white px-5 py-2 rounded-md bg-blue-500 hover:bg-blue-600 transition duration-150 ease-in-out"
                 >
-                  View more...
+                  View more
                 </button>
 
                 <Box>
                   <AlgoInfo
                     open={this.state.open2}
                     handleClose={this.handleClickOpen2}
-                    title={"box2"}
+                    data={{
+                      type: "sorting",
+                      index: this.state.algo2
+                    }}
                   />
                 </Box>
               </div>

@@ -1,0 +1,108 @@
+{
+    "sorting": [
+        {
+            "name": "Bubble Sort",
+            "code": "/images/bubble-sort.jpeg",
+            "definition": "Bubble sort is a simple sorting algorithm that repeatedly steps through a list, compares adjacent elements, and swaps them if they are in the wrong order. The pass through the list is repeated until the list is sorted.",
+            "timeComplexity": "O(n^2)"
+        },
+        {
+            "name": "Selection Sort",
+            "code": "/images/selection-sort.jpeg",
+            "definition": "Selection sort is a simple comparison-based sorting algorithm that repeatedly selects the minimum (or maximum) element from the unsorted portion of an array and moves it to the beginning (or end) of the sorted portion.",
+            "timeComplexity": "O(n^2)"
+        },
+        {
+            "name": "Insertion Sort",
+            "code": "/images/insertion-sort.jpeg",
+            "definition": "Insertion sort is a simple sorting algorithm that works similar to the way you sort playing cards in your hands. The array is virtually split into a sorted and an unsorted part. Values from the unsorted part are picked and placed at the correct position in the sorted part.",
+            "timeComplexity": "O(n^2)"
+        },
+        {
+            "name": "Quick Sort",
+            "code": "/images/quick-sort.jpeg",
+            "definition": "QuickSort is a sorting algorithm based on the Divide and Conquer algorithm that picks an element as a pivot and partitions the given array around the picked pivot by placing the pivot in its correct position in the sorted array.",
+            "timeComplexity": "O(n^2)"
+        }
+    ],
+    "recursiveSorting": [
+        {
+            "name": "Merge Sort",
+            "code": "/images/merge-sort.jpeg",
+            "definition": "Merge sort is defined as a sorting algorithm that works by dividing an array into smaller subarrays, sorting each subarray, and then merging the sorted subarrays back together to form the final sorted array.",
+            "timeComplexity": "O(n log n)"
+        },
+        {
+            "name": "Heap Sort",
+            "code": "/images/heap-sort.jpeg",
+            "definition": "Heap sort is a comparison-based sorting technique based on Binary Heap data structure. It is similar to the selection sort where we first find the minimum element and place the minimum element at the beginning. Repeat the same process for the remaining elements.",
+            "timeComplexity": "O(n log n)"
+        },
+        {
+            "name": "Quick Sort",
+            "code": "/images/quick-sort.jpeg",
+            "definition": "QuickSort is a sorting algorithm based on the Divide and Conquer algorithm that picks an element as a pivot and partitions the given array around the picked pivot by placing the pivot in its correct position in the sorted array.",
+            "timeComplexity": "O(n^2)"
+        }
+    ],
+    "searching": [
+        {
+            "name": "Linear Search",
+            "code": "/images/linear-search.jpeg",
+            "definition": "Linear Search is defined as a sequential Search algorithm that starts at  one end and goes through each element of a list until the desired element is found, otherwise the search continues till the end of the data set.",
+            "timeComplexity": "O(n)"
+        },
+        {
+            "name": "Binary Search",
+            "code": "/images/binary-search.jpeg",
+            "definition": "Binary search is a highly efficient searching algorithm used to find a specific target element within a sorted collection (such as a sorted array or list). It follows a divide-and-conquer approach, repeatedly dividing the search space in half until the target element is found or determined to be absent.",
+            "timeComplexity": "O(log n)"
+        }
+    ],
+    "pathFinding": [
+        {
+            "name": "Dijkstra's Algorithm",
+            "code": "/images/dijkstra.jpeg",
+            "definition": "Dijkstra’s algorithm is a popular algorithms for solving many single-source shortest path problems having non-negative edge weight in the graphs i.e., it is to find the shortest distance between two vertices on a graph.",
+            "timeComplexity": "O(V^2)"
+        },
+        {
+            "name": "A* Search Algorithm",
+            "code": "/images/a-star.jpeg",
+            "definition": "A* Search algorithms, unlike other traversal techniques, it has “brains”. What it means is that it is really a smart algorithm which separates it from the other conventional algorithms. This fact is cleared in detail in below sections. And it is also worth mentioning that many games and web-based maps use this algorithm to find the shortest path very efficiently (approximation).",
+            "timeComplexity": "O(V^2)"
+        },
+        {
+            "name": "Breadth First Search",
+            "code": "/images/bfs.jpeg",
+            "definition": "The Breadth First Search (BFS) algorithm is used to search a graph data structure for a node that meets a set of criteria. It starts at the root of the graph and visits all nodes at the current depth level before moving on to the nodes at the next depth level.",
+            "timeComplexity": "O(V+E)"
+        },
+        {
+            "name": "Depth First Search",
+            "code": "/images/dfs.jpeg",
+            "definition": "Depth First Traversal (or DFS) for a graph is similar to Depth First Traversal of a tree. The only catch here is, that, unlike trees, graphs may contain cycles (a node may be visited twice). To avoid processing a node more than once, use a boolean visited array. A graph can have more than one DFS traversal.",
+            "timeComplexity": "O(V+E)"
+        }
+    ],
+    "treeTraversal" : [
+        {
+            "name" : "Inorder Traversal",
+            "code" : "/images/inorder.jpeg",
+            "definition" : "Inorder traversal is a method of traversing a binary tree in a depth-first manner. In this traversal method, the left subtree is visited first, then the root and later the right sub-tree. We should always remember that every node may represent a subtree itself.",
+            "timeComplexity" : "O(n)"
+        },
+        {
+            "name" : "Preorder Traversal",
+            "code" : "/images/preorder.jpeg",
+            "definition" : "Preorder traversal is a method of traversing a binary tree. In this traversal method, the root node is visited first, then the left subtree and finally the right subtree. We should always remember that every node may represent a subtree itself.",
+            "timeComplexity" : "O(n)"
+        },
+        {
+            "name" : "Postorder Traversal",
+            "code" : "/images/postorder.jpeg",
+            "definition" : "Postorder traversal is a method of traversing a binary tree. In this traversal method, the root node is visited last, hence the name. First we traverse the left subtree, then the right subtree and finally the root node.",
+            "timeComplexity" : "O(n)"
+        }
+    ]
+}

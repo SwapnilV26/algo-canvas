@@ -6,6 +6,10 @@ import { getMaze } from "../../algorithms/recursiveMaze";
 import { bfsdfs } from "../../algorithms/bfs";
 import { randomMaze } from "../../algorithms/randomMaze";
 import { aStar } from "../../algorithms/Astar";
+import AlgoInfo from '../AlgoInfo';
+import Algos from '../../assets/data.json';
+import { Box } from '@mui/material';
+
 
 class Pathfinder extends Component {
     constructor() {
@@ -20,7 +24,8 @@ class Pathfinder extends Component {
             mazes: [
                 "Recursive division", "Random", "Recursive Horizontal bias(NA)", "Recursive Vertical bias(NA)"
             ],
-            maze: 0
+            maze: 0,
+            open: false
         }
     }
     componentDidMount() {
@@ -42,6 +47,10 @@ class Pathfinder extends Component {
         grid[row - 5][col - 5].isEndNode = true;
         this.setState({ grid, row, col, startNode, endNode });
     }
+
+    handleClickOpen = () => {
+        this.setState({ open: !this.state.open });
+    };
 
     render() {
         return (
@@ -65,6 +74,30 @@ class Pathfinder extends Component {
                         onMouseEnter={this.handleMouseEnter}
                         onMouseUp={this.handleMouseUp}
                     />
+                    <div className='mb-12'>
+                        <p className="font-semibold text-lg mt-5">
+                            <em className="font-normal">Algorithm:</em>{" "} {Algos.pathFinding[this.state.algo]?.name}
+                        </p>
+                        <p className="font-semibold text-lg">
+                            <em className="font-normal">Time Complexity:</em>{" "}  {Algos.pathFinding[this.state.algo]?.timeComplexity}
+                        </p>
+                        <button
+                            onClick={this.handleClickOpen}
+                            className="text-white px-5 py-2 mt-2 rounded-md bg-blue-500 hover:bg-blue-600 transition duration-150 ease-in-out"
+                        >
+                            View more
+                        </button>
+                        <Box>
+                            <AlgoInfo
+                                open={this.state.open}
+                                handleClose={this.handleClickOpen}
+                                data={{
+                                    type: "pathFinding",
+                                    index: this.state.algo
+                                }}
+                            />
+                        </Box>
+                    </div>
                 </div>
             </Fragment>
         );

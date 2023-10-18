@@ -9,15 +9,12 @@ const FormWrapper = styled('div')(({ theme }) => ({
     margin: theme.spacing(1),
 }));
 
-const SimpleSelect = ({ pos, onAlgoChanged }) => {
+const SimpleSelect = ({ onAlgoChanged }) => {
     const [algo, setAlgo] = useState('0');
-    // const [state, setState] = useState({
-    //   pos: props.pos,
-    // });
 
     const handleChange = (event) => {
         setAlgo(event.target.value);
-        onAlgoChanged(pos, event.target.value);
+        onAlgoChanged(event.target.value);
     };
 
     return (

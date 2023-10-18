@@ -4,9 +4,12 @@ import classes from "../Tree.module.css";
 // import { BackButton } from "../../ui/BackButton";
 import { getInordertraversal } from "./getInorderTranversal";
 import TreeNode from "../TreeNode";
-
+import { Box } from "@mui/material";
+import AlgoInfo from "../../AlgoInfo";
+import Algos from "../../../assets/data.json";
 const InorderTranversal = () => {
   const [tree, setTree] = useState([]);
+  const [open, setOpen] = useState(false);
   const [regenerate, setRegenerate] = useState(0);
   const ANIMATION_SPEED = 500;
   const traversal = "inorder";
@@ -37,6 +40,10 @@ const InorderTranversal = () => {
     setRegenerate((regenerate) => ++regenerate);
   };
 
+  const handleClickOpen = () => {
+    setOpen(!open);
+  };
+
   const preordertraversal = () => {
     const animation = getInordertraversal(tree);
     for (var i = 0; i < animation.length; i++) {
@@ -55,6 +62,28 @@ const InorderTranversal = () => {
       <h1 className="text-center text-3xl px-2 md:text-5xl font-bold tracking-tight mt-3">
         Inorder Traversal
       </h1>
+
+      <div className="my-4 mx-auto flex gap-4 w-fit items-center">
+        <p className="font-semibold text-lg">
+          <em className="font-normal">Time Complexity:</em>{" "}  {Algos.treeTraversal[0].timeComplexity}
+        </p>
+        <button
+          onClick={handleClickOpen}
+          className="text-white px-5 py-2 rounded-md bg-blue-500 hover:bg-blue-600 transition duration-150 ease-in-out"
+        >
+          View more
+        </button>
+        <Box>
+          <AlgoInfo
+            open={open}
+            handleClose={handleClickOpen}
+            data={{
+              type: "treeTraversal",
+              index: 0
+            }}
+          />
+        </Box>
+      </div>
 
       <div className={classes.Trees}>
         {tree.map((row, index) => (

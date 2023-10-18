@@ -2,10 +2,14 @@ import React, { useEffect, useState } from "react";
 import classes from "../Tree.module.css";
 import { getpreordertraversal } from "./getPreorderTraversal";
 import TreeNode from "../TreeNode";
+import { Box } from "@mui/material";
+import AlgoInfo from "../../AlgoInfo";
+import Algos from "../../../assets/data.json";
 
 const PreorderTraversal = () => {
   const [tree, setTree] = useState([]);
   const [regenerate, setRegenerate] = useState(0);
+  const [open, setOpen] = useState(false);
   const ANIMATION_SPEED = 500;
   const traversal = "preorder";
 
@@ -47,10 +51,36 @@ const PreorderTraversal = () => {
     }
   };
 
+  const handleClickOpen = () => {
+    setOpen(!open);
+  };
+
   return (
-    <div className={classes.container}>
+    <div className={classes.container + "relative"}>
       {/* <BackButton /> */}
-      <h1 className="text-center text-3xl px-2 md:text-5xl font-bold tracking-tight mt-3">Preorder Traversal</h1>
+      <h1 className="text-center text-3xl px-2 md:text-5xl font-bold tracking-tight my-3">Preorder Traversal</h1>
+
+      <div className="my-4 mx-auto flex gap-4 w-fit items-center">
+        <p className="font-semibold text-lg">
+          <em className="font-normal">Time Complexity:</em>{" "}  {Algos.treeTraversal[1].timeComplexity}
+        </p>
+        <button
+          onClick={handleClickOpen}
+          className="text-white px-5 py-2 rounded-md bg-blue-500 hover:bg-blue-600 transition duration-150 ease-in-out"
+        >
+          View more
+        </button>
+        <Box>
+          <AlgoInfo
+            open={open}
+            handleClose={handleClickOpen}
+            data={{
+              type: "treeTraversal",
+              index: 1
+            }}
+          />
+        </Box>
+      </div>
       <div className={classes.Trees}>
         {tree.map((row, index) => (
           <div key={index} className={classes.row}>
