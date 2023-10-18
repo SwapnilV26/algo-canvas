@@ -2,6 +2,7 @@ import React from "react";
 import Header from "../components/Header";
 import AlgoTypeWriter from "../components/AlgoTypeWriter";
 import { Link } from "react-router-dom";
+import Footer from "../components/Footer";
 
 const Visualize = () => {
   const topics = [
@@ -10,6 +11,12 @@ const Visualize = () => {
       description:
       "Sorting algorithm is a procedure for arranging elements in a specific order, such as ascending or descending",
       link: "/visualize/sort",
+    },
+    {
+      title: "Recursive Sorting",
+      description:
+      "Sorting techniques that divide the sorting process into smaller subproblems and repeatedly apply the sorting operation to these subproblems. ",
+      link: "/visualize/recursive-sort",
     },
     {
       title: "Searching",
@@ -34,7 +41,7 @@ const Visualize = () => {
   return (
     <>
       <Header />
-      <section className="py-24">
+      <section className="py-24 -mb-16">
         <div className="text-center">
           <h1 className="text-3xl px-2 md:text-5xl font-extrabold mb-4">
             Explore the Visualization
@@ -50,7 +57,7 @@ const Visualize = () => {
           </div>
         </div>
 
-        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 p-6">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 p-6 mt-5">
           {
             topics.map((algo, id)=>{
               return(
@@ -83,6 +90,7 @@ const Visualize = () => {
          
         </div>
       </section>
+      <Footer />
     </>
   );
 };

@@ -3,11 +3,11 @@ import React from "react";
 const Footer = () => {
   return (
     <div className="max-w-7xl mx-auto h-16 md:h-20 md:flex md:items-center md:justify-between">
-      <div className="text-lg text-gray-700 mr-4">
+      <div className="text-lg text-gray-800 mr-4">
         &copy;Algo-Canvas - All rights reserved.
       </div>
       <div className="flex items-center justify-center">
-        <p>Click here for code</p>
+        <p className="text-gray-800">Click here for contribution</p>
         <a
           href="https://github.com/SwapnilV26/algo-canvas"
           target="_blank"
@@ -15,7 +15,7 @@ const Footer = () => {
           aria-label="Github"
         >
           <svg
-            className="w-8 h-8 fill-current"
+            className="w-12 h-12 fill-current"
             viewBox="0 0 32 32"
             xmlns="http://www.w3.org/2000/svg"
           >
