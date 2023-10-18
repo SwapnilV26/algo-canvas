@@ -34,9 +34,9 @@ class Rect extends Component {
 
     getColorClass = () => {
         if (this.props.rect.isFound) {
-            return 'red';
-        } else if (this.props.rect.isSorting) {
             return 'green';
+        } else if (this.props.rect.isSorting) {
+            return 'red';
         } else if (this.props.rect.isChecked) {
             return 'black';
         } else {

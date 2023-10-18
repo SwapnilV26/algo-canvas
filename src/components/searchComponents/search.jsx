@@ -163,6 +163,10 @@ class Sort extends Component {
         this.setState({ speed });
     };
     handleSort = () => {
+        if (this.state.num === null) {
+            alert("Please insert a number to search");
+            return;
+        }
         this.setState({ resultFound: false });
         this.setState({ resultNotFound: false })
         this.setState({ isRunning: true });
