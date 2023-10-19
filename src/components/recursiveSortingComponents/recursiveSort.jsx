@@ -6,6 +6,7 @@ import { quickSortRecursive } from "../../algorithms/quickSortRecursive";
 import Menu from "./menu";
 import AlgoInfo from "../AlgoInfo";
 import { Box } from "@mui/material";
+import Algos from '../../assets/data.json'
 
 class RecursiveSort extends Component {
   state = {
@@ -14,6 +15,7 @@ class RecursiveSort extends Component {
     speed: 50,
     isRunning: false,
     algo: 0,
+    open: false,
   };
 
   constructor() {
@@ -24,6 +26,11 @@ class RecursiveSort extends Component {
     var rects = getInitialRects(this.state.count);
     this.setState({ rects });
   }
+
+  handleClickOpen = () => {
+    this.setState({ open: !this.state.open });
+  }
+  
 
   render() {
     return (
@@ -43,21 +50,25 @@ class RecursiveSort extends Component {
           <Rects rects={this.state.rects} />
           <div>
             <p className="font-semibold text-lg mt-5">
-              <em className="font-normal">Algorithm:</em>{" "}Bubble Sort
+              <em className="font-normal">Algorithm:</em>{" "} {Algos.recursiveSorting[this.state.algo].name}
             </p>
             <p className="font-semibold text-lg">
-              <em className="font-normal">Time Complexity:</em>{" "} O(n^2)
+              <em className="font-normal">Time Complexity:</em>{" "}  {Algos.recursiveSorting[this.state.algo].timeComplexity}
             </p>
             <button
               onClick={this.handleClickOpen}
               className="text-white px-5 py-2 mt-2 rounded-md bg-blue-500 hover:bg-blue-600 transition duration-150 ease-in-out"
             >
-              View more...
+              View more
             </button>
             <Box>
               <AlgoInfo
                 open={this.state.open}
                 handleClose={this.handleClickOpen}
+                data={{
+                  type : "recursiveSorting",
+                  index : this.state.algo
+                }}
               />
             </Box>
           </div>

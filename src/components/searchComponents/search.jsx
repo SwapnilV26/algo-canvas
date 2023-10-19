@@ -3,6 +3,7 @@ import Rects from "./rects";
 import Menu from "./menu";
 import AlgoInfo from "../AlgoInfo";
 import { Box } from "@mui/material";
+import Algos from "../../assets/data.json";
 
 class Sort extends Component {
     state = {
@@ -103,21 +104,27 @@ class Sort extends Component {
                 </div>
                 <div className="flex flex-col items-center justify-center gap-5">
                     <Rects speed={this.state.speed} rects={this.state.rects} />
-                    <div className="flex gap-5">
+                    <div>
+                        <p className="font-semibold text-lg mt-5">
+                            <em className="font-normal">Algorithm:</em>{" "} {Algos.searching[this.state.algo1].name}
+                        </p>
                         <p className="font-semibold text-lg">
-                            Bubble Sort, <em className="font-normal">Time Complexity:</em>{" "}
-                            O(n^2)
+                            <em className="font-normal">Time Complexity:</em>{" "}  {Algos.searching[this.state.algo1].timeComplexity}
                         </p>
                         <button
                             onClick={this.handleClickOpen}
-                            className="underline text-blue-500 underline-offset-1"
+                            className="text-white px-5 py-2 mt-2 rounded-md bg-blue-500 hover:bg-blue-600 transition duration-150 ease-in-out"
                         >
-                            More Info...
+                            View more
                         </button>
                         <Box>
                             <AlgoInfo
                                 open={this.state.open}
                                 handleClose={this.handleClickOpen}
+                                data={{
+                                    type: "searching",
+                                    index: this.state.algo1
+                                }}
                             />
                         </Box>
                     </div>
@@ -128,7 +135,7 @@ class Sort extends Component {
                     }
                     {this.state.resultNotFound &&
                         <h1>
-                            Element not present :(
+                            Element not present 😟
                         </h1>
                     }
                 </div>
