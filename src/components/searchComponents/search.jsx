@@ -14,6 +14,7 @@ class Sort extends Component {
         algo1: 0,
         open: false,
         num: null,
+        foundAt: 0,
         resultFound: false,
         resultNotFound: false
     };
@@ -43,6 +44,7 @@ class Sort extends Component {
             await sleep(this.state.speed);
 
             if (parseInt(this.state.rects[i].width) === parseInt(this.state.num)) {
+                this.setState({ foundAt: i });
                 this.setState({ resultFound: true });
                 this.setState({ isRunning: false });
                 return;
@@ -72,6 +74,7 @@ class Sort extends Component {
             await sleep(this.state.speed);
 
             if (parseInt(this.state.rects[mid].width) === parseInt(this.state.num)) {
+                this.setState({ foundAt: mid });
                 this.setState({ resultFound: true });
                 this.setState({ isRunning: false });
                 return;
@@ -102,7 +105,7 @@ class Sort extends Component {
                         passElement={this.passElement}
                     />
                 </div>
-                <div className="flex flex-col items-center justify-center gap-5">
+                <div className="flex flex-col items-center justify-center gap-5 mt-16">
                     <Rects speed={this.state.speed} rects={this.state.rects} />
                     <div>
                         <p className="font-semibold text-lg mt-5">
@@ -129,14 +132,14 @@ class Sort extends Component {
                         </Box>
                     </div>
                     {this.state.resultFound &&
-                        <h1>
-                            Element found!!
-                        </h1>
+                        <span className="text-xl text-green-600 font-bold text-center">
+                            Element found at position {this.state.foundAt + 1} :)
+                        </span>
                     }
                     {this.state.resultNotFound &&
-                        <h1>
+                        <span className="text-xl text-red-500 font-bold text-center">
                             Element not present 😟
-                        </h1>
+                        </span>
                     }
                 </div>
             </React.Fragment>
