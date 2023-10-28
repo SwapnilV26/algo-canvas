@@ -56,31 +56,10 @@ const PreorderTraversal = () => {
   };
 
   return (
-    <div className={classes.container + "relative"}>
+    <div className={classes.container}>
       {/* <BackButton /> */}
       <h1 className="text-center text-3xl px-2 md:text-5xl font-bold tracking-tight my-3">Preorder Traversal</h1>
 
-      <div className="my-4 mx-auto flex gap-4 w-fit items-center">
-        <p className="font-semibold text-lg">
-          <em className="font-normal">Time Complexity:</em>{" "}  {Algos.treeTraversal[1].timeComplexity}
-        </p>
-        <button
-          onClick={handleClickOpen}
-          className="text-white px-5 py-2 rounded-md bg-blue-500 hover:bg-blue-600 transition duration-150 ease-in-out"
-        >
-          View more
-        </button>
-        <Box>
-          <AlgoInfo
-            open={open}
-            handleClose={handleClickOpen}
-            data={{
-              type: "treeTraversal",
-              index: 1
-            }}
-          />
-        </Box>
-      </div>
       <div className={classes.Trees}>
         {tree.map((row, index) => (
           <div key={index} className={classes.row}>
@@ -96,6 +75,7 @@ const PreorderTraversal = () => {
           </div>
         ))}
       </div>
+
       <div className={classes.button}>
         <button
           className="text-blue-700 hover:text-white border border-blue-500 bg-white hover:bg-blue-600 focus:ring-2 focus:outline-none focus:ring-blue-300 font-medium rounded-lg px-4 py-1.5 text-center"
@@ -113,6 +93,28 @@ const PreorderTraversal = () => {
         >
           Preorder Traversal
         </button>
+      </div>
+
+      <div className="my-2 mx-auto flex gap-4 w-fit items-center">
+        <p className="font-semibold text-lg">
+          <em className="font-medium">Time Complexity:</em>{" "}  {Algos.treeTraversal[1].timeComplexity}
+        </p>
+        <button
+          onClick={handleClickOpen}
+          className="text-white px-5 py-2 rounded-md bg-blue-500 hover:bg-blue-600 transition duration-150 ease-in-out"
+        >
+          View more
+        </button>
+        <Box>
+          <AlgoInfo
+            open={open}
+            handleClose={handleClickOpen}
+            data={{
+              type: "treeTraversal",
+              index: 1
+            }}
+          />
+        </Box>
       </div>
     </div>
   );

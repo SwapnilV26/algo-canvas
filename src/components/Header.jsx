@@ -22,9 +22,9 @@ const Header = () => {
       }`}
     >
       <div className="mx-24 flex items-center justify-between h-16 md:h-20">
-        <div>
+        <Link to="/">
           <img className="w-40" src="./algocanvas.png" alt="" />
-        </div>
+        </Link>
         <nav>
           <ul className="flex grow justify-end flex-wrap items-center gap-5 text-lg">
             <li>

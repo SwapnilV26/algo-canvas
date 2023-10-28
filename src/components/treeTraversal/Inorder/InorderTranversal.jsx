@@ -59,31 +59,9 @@ const InorderTranversal = () => {
   return (
     <div className={classes.container}>
       {/* <BackButton /> */}
-      <h1 className="text-center text-3xl px-2 md:text-5xl font-bold tracking-tight mt-3">
+      <h1 className="text-center text-3xl px-2 md:text-5xl font-bold tracking-tight my-3">
         Inorder Traversal
       </h1>
-
-      <div className="my-4 mx-auto flex gap-4 w-fit items-center">
-        <p className="font-semibold text-lg">
-          <em className="font-normal">Time Complexity:</em>{" "}  {Algos.treeTraversal[0].timeComplexity}
-        </p>
-        <button
-          onClick={handleClickOpen}
-          className="text-white px-5 py-2 rounded-md bg-blue-500 hover:bg-blue-600 transition duration-150 ease-in-out"
-        >
-          View more
-        </button>
-        <Box>
-          <AlgoInfo
-            open={open}
-            handleClose={handleClickOpen}
-            data={{
-              type: "treeTraversal",
-              index: 0
-            }}
-          />
-        </Box>
-      </div>
 
       <div className={classes.Trees}>
         {tree.map((row, index) => (
@@ -117,6 +95,27 @@ const InorderTranversal = () => {
         >
           Inorder Traversal
         </button>
+      </div>
+      <div className="my-2 mx-auto flex gap-4 w-fit items-center">
+        <p className="font-semibold text-lg">
+          <em className="font-normal">Time Complexity:</em>{" "}  {Algos.treeTraversal[0].timeComplexity}
+        </p>
+        <button
+          onClick={handleClickOpen}
+          className="text-white px-5 py-2 rounded-md bg-blue-500 hover:bg-blue-600 transition duration-150 ease-in-out"
+        >
+          View more
+        </button>
+        <Box>
+          <AlgoInfo
+            open={open}
+            handleClose={handleClickOpen}
+            data={{
+              type: "treeTraversal",
+              index: 0
+            }}
+          />
+        </Box>
       </div>
     </div>
   );
