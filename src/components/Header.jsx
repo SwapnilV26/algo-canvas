@@ -1,12 +1,29 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 const Header = () => {
+  const [top, setTop] = useState(true);
+
+  // detect whether user has scrolled the page down by 10px
+  const scrollHandler = () => {
+    window.pageYOffset > 30 ? setTop(false) : setTop(true);
+  };
+
+  useEffect(() => {
+    scrollHandler();
+    window.addEventListener("scroll", scrollHandler);
+    return () => window.removeEventListener("scroll", scrollHandler);
+  }, [top]);
+
   return (
-    <header className="fixed z-10 bg-gray-200 w-full transition duration-300 ease-in-out">
+    <header
+      className={`fixed z-10 w-full transition duration-300 ease-in-out ${
+        !top && "bg-white backdrop-blur-sm shadow-lg"
+      }`}
+    >
       <div className="mx-24 flex items-center justify-between h-16 md:h-20">
         <div>
-          <img className="w-40" src="./algocanvas.png" alt="" srcset="" />
+          <img className="w-40" src="./algocanvas.png" alt="" />
         </div>
         <nav>
           <ul className="flex grow justify-end flex-wrap items-center gap-5 text-lg">
