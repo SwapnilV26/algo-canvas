@@ -7,10 +7,10 @@ import { Link } from "react-router-dom";
 class Menu extends Component {
   render() {
     return (
-      <nav className="flex justify-center items-center bg-gray-200 gap-10 py-1">
+      <nav className="flex justify-center items-center bg-slate-100 gap-10 py-2">
         <Link
           to="/visualize"
-          className="font-bold py-2 px-5 pl-6 bg-blue-500 hover:bg-blue-600 rounded text-white flex items-center transition duration-150 ease-in-out"
+          className="font-bold py-2 px-5 pl-6 mr-16 bg-blue-500 hover:bg-blue-600 rounded text-white flex items-center transition duration-150 ease-in-out"
         >
           <MdArrowBackIos size={20} />
         </Link>
@@ -21,26 +21,26 @@ class Menu extends Component {
           />
         </div>
         <button
-          className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+          className="transition duration-150 ease-in-out py-2 px-5 mr-2 text font-medium text-gray-900 bg-white rounded-md border border-gray-200 hover:bg-gray-50 hover:text-blue-700"
           onClick={this.props.onCreateMaze}
         >
           Create Maze
         </button>
         <button
           onClick={this.props.onVisualize}
-          className="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded"
+          className="text-white bg-purple-700 hover:bg-purple-800 font-medium rounded-md text px-5 py-2 transition duration-150 ease-in-out"
         >
           Visualize
         </button>
         <button
           onClick={this.props.onClearPath}
-          className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded"
+          className="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded-md"
         >
           Clear Path
         </button>
         <button
           onClick={this.props.onClearBoard}
-          className="bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded"
+          className="bg-yellow-400 hover:bg-yellow-500 text-white font-bold py-2 px-4 rounded-md"
         >
           Clear Board
         </button>

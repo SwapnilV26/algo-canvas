@@ -22,7 +22,7 @@ class Pathfinder extends Component {
             ],
             algo: 0,
             mazes: [
-                "Recursive division", "Random", "Recursive Horizontal bias(NA)", "Recursive Vertical bias(NA)"
+                "Random", "Recursive Horizontal bias(NA)", "Recursive Vertical bias(NA)"
             ],
             maze: 0,
             open: false
